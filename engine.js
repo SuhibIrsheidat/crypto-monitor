@@ -86,7 +86,7 @@ async function presentData() {
         const last5Candles = candles.slice(Math.max(candles.length - 5, 1))
 
         const lastCandle = candles[candles.length - 1]
-        const lastCandlePercentage = ((lastCandle[1] - lastCandle[0]) / lastCandle[0]) * 100
+        var lastCandlePercentage = ((lastCandle[1] - lastCandle[0]) / lastCandle[0]) * 100
         lastCandlePercentage = (lastCandlePercentage).toLocaleString(
               undefined,
               { minimumFractionDigits: 2 }

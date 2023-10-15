@@ -80,7 +80,7 @@ async function presentData() {
         const currentPrice = (await getCurrentPriceOfTokens(token)).currentPrice
 
         const lastHourCandles = candles.slice(Math.max(0, 1))
-        const last20Candles = candles.slice(Math.max(candles.length - 20, 1))
+        const last20Candles = candles.slice(Math.max(candles.length - 5, 1))
         const last10Candles = candles.slice(Math.max(candles.length - 10, 1))
 
         const lastClosePriceHour = lastHourCandles[lastHourCandles.length - 1][1]
@@ -145,13 +145,13 @@ async function presentData() {
                         1H 
                         ${priceChangeLastHour}%
                     </label>
-                    <label class="cryptoPercentage ${priceChangeLast20m > 0 ? 'green-percentage' : 'red-percentage'}">
-                        20m
-                        ${priceChangeLast20m}%
-                    </label>
                     <label class="cryptoPercentage ${priceChangeLast10m > 0 ? 'green-percentage' : 'red-percentage'}">
                         10m
                         ${priceChangeLast10m}%
+                    </label>
+                    <label class="cryptoPercentage ${priceChangeLast20m > 0 ? 'green-percentage' : 'red-percentage'}">
+                        5m
+                        ${priceChangeLast20m}%
                     </label>
                 </div>
             </div>

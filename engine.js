@@ -129,7 +129,7 @@ async function presentData() {
         } else if (priceChangeLast10m > 2.35 && priceChangeLast10m < 10.0) {
             cardBg = 'background-color: #366C1B; border-color: #85bb65'
         } else if (priceChangeLast10m >= 10) {
-            cardBg = 'background-color: #85bb65; border-color: #366C1B; transform: scale(1.1)'
+            cardBg = 'background-color: #366C1B; border-color: #85bb65; transform: scale(1.1)'
         }
 
         var candlesHtml = ``

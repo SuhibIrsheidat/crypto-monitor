@@ -1,0 +1,104 @@
+* {
+    font-family: 'Inconsolata';
+    margin: 0;
+}
+
+a {
+    color: inherit !important;
+    text-decoration: none;;
+}
+
+#monitor {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    font-size: 16px;
+    color: #EEE;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-column-start: 1;
+}
+
+.cryptoCard {
+    width: 21vw;
+    padding: 0.5vw;
+    border: 2px solid #eee;
+    position: relative;
+    border-radius: 10px;
+    margin: 1vw 1.75vw;
+}
+
+.cryptoTitle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    margin-bottom: 1vh;
+    color: #EEE !important;
+    position: relative
+}
+
+.cryptoTitle > div {
+    text-align: right;
+}
+
+.cryptoPercentage {
+    padding: 0.1vw 0.25vw;
+    font-weight: 800;
+    border: 1px solid #727272;
+    color: #EEE !important;
+    border-radius: 10px;
+}
+
+.diffLast10Minutes > .cryptoPercentage {
+    margin-right: 0.5vw;
+}
+
+.last5Candles {
+    font-size: 12px !important;
+    line-height: 2.75vh;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.diffLast10Minutes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.red-percentage {
+    background-color: #a41e1e;
+}
+
+.red-bg {
+    background-color: #222;
+}
+
+.red-text {
+    color: #dc2323;
+}
+
+.red-border {
+    border-color: #444;
+}
+
+.green-percentage {
+    background-color: #3fa221;
+}
+
+.green-bg {
+    background-color: #244d2a;
+}
+
+.green-text {
+    color: #42bc1d;
+}
+
+.green-border {
+    border-color: #23620f;
+}

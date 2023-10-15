@@ -156,7 +156,9 @@ async function presentData() {
                         <small class="currentPrice">$${currentPrice}</small>
                         <label class="cryptoPercentage ${currentPercentage > 0 ? 'green-percentage' : 'red-percentage'}">
                             <i class="fa ${currentPercentage > 0 ? 'fa-arrow-up' : 'fa-arrow-down'}" aria-hidden="true"></i>
-                            ${currentPercentage}%
+                            <span style="margin-left: 0.25vw">
+                                ${currentPercentage}%
+                            </span>
                         </label>
                     </div>
                 </div>

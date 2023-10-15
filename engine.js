@@ -80,8 +80,9 @@ async function presentData() {
         const currentPrice = (await getCurrentPriceOfTokens(token)).currentPrice
 
         const lastHourCandles = candles.slice(Math.max(0, 1))
-        const last20Candles = candles.slice(Math.max(candles.length - 5, 1))
+        const last20Candles = candles.slice(Math.max(candles.length - 20, 1))
         const last10Candles = candles.slice(Math.max(candles.length - 10, 1))
+        const last5Candles = candles.slice(Math.max(candles.length - 5, 1))
 
         const lastClosePriceHour = lastHourCandles[lastHourCandles.length - 1][1]
         const firstClosePriceHour = lastHourCandles[0][1]
@@ -103,6 +104,14 @@ async function presentData() {
             const firstClosePrice10m = last10Candles[0][1]
             var priceChangeLast10m = ((lastClosePrice10m - firstClosePrice10m) / firstClosePrice10m) * 100
             priceChangeLast10m = (priceChangeLast10m).toLocaleString(
+                undefined,
+                { minimumFractionDigits: 2 }
+              );
+        
+            const lastClosePrice5m = last5Candles[last5Candles.length - 1][1]
+            const firstClosePrice5m = last5Candles[0][1]
+            var priceChangeLast5m = ((lastClosePrice5m - firstClosePrice5m) / firstClosePrice5m) * 100
+            priceChangeLast5m = (priceChangeLast5m).toLocaleString(
                 undefined,
                 { minimumFractionDigits: 2 }
               );
@@ -149,9 +158,9 @@ async function presentData() {
                         10m
                         ${priceChangeLast10m}%
                     </label>
-                    <label class="cryptoPercentage ${priceChangeLast20m > 0 ? 'green-percentage' : 'red-percentage'}">
+                    <label class="cryptoPercentage ${priceChangeLast5m > 0 ? 'green-percentage' : 'red-percentage'}">
                         5m
-                        ${priceChangeLast20m}%
+                        ${priceChangeLast5m}%
                     </label>
                 </div>
             </div>

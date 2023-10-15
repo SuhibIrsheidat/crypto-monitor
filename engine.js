@@ -4,6 +4,7 @@ var last10Candles = []
 var currentPrices = []
 
 init()
+
 setInterval(function() {
     init()
 }, 15000);

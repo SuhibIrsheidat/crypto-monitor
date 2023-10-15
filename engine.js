@@ -85,6 +85,13 @@ async function presentData() {
         const last10Candles = candles.slice(Math.max(candles.length - 10, 1))
         const last5Candles = candles.slice(Math.max(candles.length - 5, 1))
 
+        const lastCandle = candles[candles.length - 1]
+        const lastCandlePercentage = ((lastCandle[1] - lastCandle[0]) / lastCandle[0]) * 100
+        lastCandlePercentage = (lastCandlePercentage).toLocaleString(
+              undefined,
+              { minimumFractionDigits: 2 }
+            );
+
         const lastClosePriceHour = lastHourCandles[lastHourCandles.length - 1][1]
         const firstClosePriceHour = lastHourCandles[0][1]
         var priceChangeLastHour = ((lastClosePriceHour - firstClosePriceHour) / firstClosePriceHour) * 100
@@ -155,7 +162,7 @@ async function presentData() {
                     </div>
                 </div>
                 <div class="last5Candles">
-                    ${candlesHtml}
+                    ${candlesHtml} [${lastCandlePercentage}%]
                 </div>
                 <div class="diffLast10Minutes">
                     <label class="cryptoPercentage ${priceChangeLastHour > 0 ? 'green-percentage' : 'red-percentage'}">

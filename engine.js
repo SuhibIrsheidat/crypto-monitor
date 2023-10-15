@@ -117,7 +117,14 @@ async function presentData() {
                 { minimumFractionDigits: 2 }
               );
 
-        var isGreenBG = priceChangeLast10m > 1.5
+        var cardBg = '#222'
+        if (priceChangeLast10m > 1.625 && priceChangeLast10m < 2.35) {
+            cardBg = 'background-color: #222; border-color: #85bb65'
+        } else if (priceChangeLast10m > 2.35 && priceChangeLast10m < 10.0) {
+            cardBg = 'background-color: #366C1B; border-color: #85bb65'
+        } else if (priceChangeLast10m >= 10) {
+            cardBg = 'background-color: #222; border-color: #366C1B; transform: scale(1.2)'
+        }
 
         var candlesHtml = ``
         for (let j = 0; j < last20Candles.length; j++) {
@@ -136,7 +143,7 @@ async function presentData() {
 
         cryptoCard = `
             <a href="https://www.binance.com/en/trade/${token}?type=spot" target="_blank">
-            <div class="cryptoCard ${isGreenBG ? 'green-bg green-border' : 'red-bg red-border'}">
+            <div class="cryptoCard red-bg red-border" style="${cardBg}">
                 <div class="cryptoTitle">
                     <h3>${token}</h3>
                     <div>
